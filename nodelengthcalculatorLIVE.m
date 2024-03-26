@@ -1,4 +1,4 @@
-function [nodeLength] = nodelengthcalculatorLive(distance, noderaw, pixelSize)
+function [nodeLength, x1, x2] = nodelengthcalculatorLive(distance, noderaw, pixelSize)
 
 % also need: 'intersections' function (Douglas Schwarz,
 % http://uk.mathworks.com/matlabcentral/fileexchange/11837-fast-and-robust-curve-intersections/content/intersections.m
@@ -77,6 +77,9 @@ function [nodeLength] = nodelengthcalculatorLive(distance, noderaw, pixelSize)
     plot(min(intersecPN2), PN2HalfMax, 'ro', 'MarkerSize', 8);
     plot(max(intersecPN1),PN1HalfMax, ['*', 'b']);
     plot(min(intersecPN2),PN2HalfMax, ['*','b']);
+    
+    x1 = PN1HalfMax; %where the positions are that the ends of the nodes are in the x-axis
+    x2 = PN2HalfMax;
     
     % calculate distance between relevant intersection points
     nodeLength = (min(intersecPN2)-max(intersecPN1))*pixelSize;

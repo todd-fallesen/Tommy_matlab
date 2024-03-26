@@ -24,7 +24,7 @@ for a = 1:length(files)
     
     distance        = data(~any(isnan(noderaw),2),2*i-1);
     
-    [nodeLength(i)] = nodelengthcalculatorLIVE(distance, noderawno_nans, pixelSize);
+    [nodeLength(i), x1(i), x2(i)] = nodelengthcalculatorLIVE(distance, noderawno_nans, pixelSize);
     
     % Create a PNG filename.
 	pngFileName = sprintf('%s_%d',filename, i);
