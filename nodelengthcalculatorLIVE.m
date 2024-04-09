@@ -78,8 +78,8 @@ function [nodeLength, x1, x2] = nodelengthcalculatorLive(distance, noderaw, pixe
     plot(max(intersecPN1),PN1HalfMax, ['*', 'b']);
     plot(min(intersecPN2),PN2HalfMax, ['*','b']);
     
-    x1 = PN1HalfMax; %where the positions are that the ends of the nodes are in the x-axis
-    x2 = PN2HalfMax;
+    x1 = max(intersecPN1); %where the positions are that the ends of the nodes are in the x-axis
+    x2 = min(intersecPN2);
     
     % calculate distance between relevant intersection points
     nodeLength = (min(intersecPN2)-max(intersecPN1))*pixelSize;
